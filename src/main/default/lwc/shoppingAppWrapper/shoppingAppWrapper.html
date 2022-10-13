@@ -4,4 +4,12 @@
 
 <!-- Shopping App Wrapper -->
 <template>
+    <lightning-card>
+        <lightning-button icon-name="utility:add" variant="brand">New</lightning-button>
+        <template for:each={shoppingListsWrappers} for:item="wrapper">
+            {wrapper.Name}
+        </template>
+    </lightning-card>
+
+    <c-shopping-list-items shopping-list-id={selectedList.Id}></c-shopping-list-items>
 </template>

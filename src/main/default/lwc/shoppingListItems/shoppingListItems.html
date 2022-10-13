@@ -1,0 +1,11 @@
+<!--
+ - Created by tomas.chour on 12.10.2022.
+ -->
+
+<!-- Shopping List Items -->
+<template>
+    {shoppingList.Name}
+    <template for:each={shoppingListItems} for:item="listItem">
+        <c-shopping-list-item-tile shopping-list-item={listItem}></c-shopping-list-item-tile>
+    </template>
+</template>

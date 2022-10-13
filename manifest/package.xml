@@ -6,6 +6,9 @@
     </types>
     <types>
         <members>shoppingAppWrapper</members>
+        <members>newShoppingListItem</members>
+        <members>shoppingListItems</members>
+        <members>shoppingListItemTile</members>
         <name>LightningComponentBundle</name>
     </types>
     <version>54.0</version>
