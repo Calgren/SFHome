@@ -4,8 +4,50 @@
 
 <!-- Shopping List Items -->
 <template>
-    {shoppingList.Name}
-    <template for:each={shoppingListItems} for:item="listItem">
-        <c-shopping-list-item-tile shopping-list-item={listItem}></c-shopping-list-item-tile>
-    </template>
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                            <lightning-icon class={listIconClasses} icon-name="standard:webcart" alternative-text={shoppingList.Category__c} title={shoppingList.Category__c} size="large"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title={shoppingList.Name}>{shoppingList.Name}</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta">Category: {shoppingList.Category__c} • Due Date:
+                            {shoppingList.Due_Date__c}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <lightning-button-group>
+                            <lightning-button label="Edit" icon-name="utility:edit"></lightning-button>
+                            <lightning-button label="Copy Shopping List" icon-name="utility:copy"></lightning-button>
+                            <lightning-button label="Save" variant="brand" icon-name="utility:save"></lightning-button>
+                            <lightning-button label="Delete List" variant="destructive" icon-name="utility:delete"></lightning-button>
+                            <lightning-button label="Remove Selected Items" variant="destructive" icon-name="utility:close"></lightning-button>
+                        </lightning-button-group>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <lightning-layout multiple-rows>
+        <template for:each={shoppingListItems} for:item="listItem">
+            <lightning-layout-item class="slds-p-around_medium" size="2" key={listItem.Id}>
+                <c-shopping-list-item-tile onlistitemselect={handleItemSelect}
+                                           onlistitemremove={handleItemRemove}
+                                           shopping-list-item={listItem}
+                ></c-shopping-list-item-tile>
+            </lightning-layout-item>
+
+        </template>
+    </lightning-layout>
 </template>

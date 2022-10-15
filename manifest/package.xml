@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types>
-        <members>*</members>
-        <name>CustomObject</name>
-    </types>
+    <!--    <types>-->
+    <!--        <members>*</members>-->
+    <!--        <name>CustomObject</name>-->
+    <!--    </types>-->
     <types>
         <members>shoppingAppWrapper</members>
-        <members>newShoppingListItem</members>
         <members>shoppingListItems</members>
         <members>shoppingListItemTile</members>
+        <members>editShoppingListItem</members>
         <name>LightningComponentBundle</name>
     </types>
     <version>54.0</version>

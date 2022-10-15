@@ -4,5 +4,21 @@
 
 <!-- Shopping List Item Tile -->
 <template>
-
+    <div onclick={selectTile} class={tileClass}>
+        <lightning-icon class="button-delete" onclick={handleRemove} icon-name="action:delete" alternative-text="Remove" title="Remove" size="x-small"></lightning-icon>
+        <div style={backgroundStyle} class="tile"></div>
+        <div>
+            <h1 class="slds-truncate slds-text-heading_medium">{shoppingListItem.Name}</h1>
+            <span style="font-size: 1.3em">
+<!--                <lightning-button-icon icon-name="utility:dash"  variant="bare" alternative-text="Minus" title="Minus" size="large"></lightning-button-icon>-->
+                <lightning-input disabled={isViewMode} type="number" label="Quantity" value={shoppingListItem.Quantity__c}></lightning-input>
+<!--                <lightning-button-icon icon-name="utility:add"  variant="bare" alternative-text="Add" title="Add" size="large"></lightning-button-icon>-->
+            </span>
+<!--            <div class="slds-text-body_small">-->
+<!--                Price: <lightning-formatted-number maximum-fraction-digits="2" format-style="currency" currency-code="USD" value={boat.Price__c}> </lightning-formatted-number>-->
+<!--            </div>-->
+<!--            <div class="slds-text-body_small"> Length: {boat.Length__c} </div>-->
+<!--            <div class="slds-text-body_small"> Type: {boat.BoatType__r.Name} </div>-->
+        </div>
+    </div>
 </template>

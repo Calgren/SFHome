@@ -1,0 +1,7 @@
+/**
+ * Created by tomas.chour on 14.10.2022.
+ */
+.shopping-list-tile:hover{
+    cursor: pointer;
+    background-color: gainsboro;
+}

@@ -2,9 +2,9 @@
  * Created by tomas.chour on 12.10.2022.
  */
 
-import {LightningElement} from 'lwc';
+import {LightningElement, api} from 'lwc';
 
-export default class NewShoppingListItem extends LightningElement {
+export default class EditShoppingListItem extends LightningElement {
 
     @api shoppingList;
     @api itemId;

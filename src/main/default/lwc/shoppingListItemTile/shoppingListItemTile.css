@@ -1,0 +1,25 @@
+/**
+ * Created by tomas.chour on 15.10.2022.
+ */
+.tile {
+    width: 100%;
+    height: 220px;
+    padding: 1px !important;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+}
+.tile-wrapper {
+    border: 1px solid rgb(201, 199, 197);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+.selected {
+    border: 3px solid rgb(0, 95, 178);
+    border-radius: 5px;
+}
+.button-delete {
+    --sds-c-icon-color-foreground: white;
+    --sds-c-icon-color-background: rgb(186, 5, 23);
+}

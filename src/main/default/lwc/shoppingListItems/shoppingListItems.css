@@ -1,0 +1,12 @@
+/**
+ * Created by tomas.chour on 15.10.2022.
+ */
+.list-icon.groceries {
+    --sds-c-icon-color-foreground: white;
+    --sds-c-icon-color-background: rgb(46, 132, 74);
+}
+
+.list-icon.mix {
+    --sds-c-icon-color-foreground: white;
+    --sds-c-icon-color-background: rgb(1, 68, 134);
+}

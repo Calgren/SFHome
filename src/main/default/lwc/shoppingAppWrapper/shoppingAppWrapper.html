@@ -5,11 +5,27 @@
 <!-- Shopping App Wrapper -->
 <template>
     <lightning-card>
-        <lightning-button icon-name="utility:add" variant="brand">New</lightning-button>
-        <template for:each={shoppingListsWrappers} for:item="wrapper">
-            {wrapper.Name}
-        </template>
+        <div class="slds-p-around_medium">
+            <lightning-button icon-name="utility:add" variant="brand" label="New"></lightning-button>
+            <lightning-layout>
+                <lightning-layout-item class="slds-p-top_medium" size="12" large-device-size="1">
+                    <ul class="slds-has-dividers_around-space">
+                        <template for:each={shoppingListsWrappers} for:item="wrapper">
+                            <li key={wrapper.Id} data-id={wrapper.Id} class="slds-item shopping-list-tile" onclick={handleListSelect}>
+                                <article class="slds-tile slds-tile_board">
+                                    <p class="slds-text-heading_medium">{wrapper.Name}</p>
+                                    <p class="slds-truncate">{wrapper.Category__c}</p>
+                                    <p class="slds-truncate">{wrapper.Due_Date__c}</p>
+                                    <p class="slds-truncate">{wrapper.Shop__c}</p>
+                                </article>
+                            </li>
+                        </template>
+                    </ul>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_large slds-border_left slds-p-around_medium" size="11">
+                    <c-shopping-list-items if:true={selectedList} shopping-list={selectedList}></c-shopping-list-items>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
     </lightning-card>
-
-    <c-shopping-list-items shopping-list-id={selectedList.Id}></c-shopping-list-items>
 </template>
